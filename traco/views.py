@@ -9,20 +9,24 @@ from django.contrib.auth.models import User
 
 
 
+
 def index(request):
     categories = Category.objects.all()
-    active_category = request.GET.get("category")
+    active_category = request.GET.get("category")  # this will be the ID
+     # Default posts (if no category or invalid input)
+    posts = BlogPost.objects.all().order_by("-date")[:3]
  
-    if active_category:
-        posts = BlogPost.objects.filter(category__name=active_category).order_by("-date")[:6]
-    else:
-        posts = BlogPost.objects.all().order_by("-date")[:6]
+    if active_category and active_category.isdigit():
+        posts = BlogPost.objects.filter(category__id=int(active_category)).order_by("-date")[:3]
  
     return render(request, "traco/index.html", {
         "categories": categories,
         "active_category": active_category,
         "posts": posts,
     })
+ 
+def home(request):
+        return render(request, "traco/home.html",)
 
 def home(request):
         return render(request, "traco/home.html",)

@@ -12,25 +12,25 @@ CITY_CHOICES = [
 
 # Partner Form
 class PartnerForm(forms.Form):
-    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Your Name', 'class': 'form-input w-full px-4 py-2 rounded-lg'}))
-    phone = forms.CharField(max_length=10, min_length=10, widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'form-input w-full px-4 py-2 rounded-lg'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'E-Mail Id', 'class': 'form-input w-full px-4 py-2 rounded-lg'}))
-    pincode = forms.CharField(max_length=6, min_length=6, widget=forms.TextInput(attrs={'placeholder': 'Pin Code', 'class': 'form-input w-full px-4 py-2 rounded-lg'}))
-    city = forms.ChoiceField(choices=CITY_CHOICES,  widget=forms.Select(attrs={'class': 'form-input w-full px-4 py-2 rounded-lg'}))
+    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Your Name', 'class': 'form-input text-black w-full px-4 py-2 rounded-lg'}))
+    phone = forms.CharField(max_length=10, min_length=10, widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'form-input text-black w-full px-4 py-2 rounded-lg'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'E-Mail Id', 'class': 'form-input text-black w-full px-4 py-2 rounded-lg'}))
+    pincode = forms.CharField(max_length=6, min_length=6, widget=forms.TextInput(attrs={'placeholder': 'Pin Code', 'class': 'form-input text-black w-full px-4 py-2 rounded-lg'}))
+    city = forms.ChoiceField(choices=CITY_CHOICES,  widget=forms.Select(attrs={'class': 'form-input  text-black w-full px-4 py-2 rounded-lg'}))
 
 # Login Form
 class LoginForm(forms.Form):
-    email = forms.EmailField(max_length=254, widget=forms.EmailInput(attrs={'placeholder': 'E-mail Id', 'class': 'form-input w-full px-4 py-2 rounded-xl'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-input w-full px-4 py-2 rounded-xl'}))
+    email = forms.EmailField(max_length=254, widget=forms.EmailInput(attrs={'placeholder': 'E-mail Id', 'class': 'form-input  text-black w-full px-4 py-2 rounded-xl'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-input text-black  w-full px-4 py-2 rounded-xl'}))
 
 
 class RegisterForm(forms.ModelForm):
     phone = forms.CharField(
         max_length=10, min_length=10,
-        widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'form-input w-full px-4 py-2 rounded-xl'})
+        widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'form-input text-black  w-full px-4 py-2 rounded-xl'})
     )
     confirm_password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'form-input w-full px-4 py-2 rounded-xl'})
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'form-input  text-black w-full px-4 py-2 rounded-xl'})
     )
 
     class Meta:
@@ -39,15 +39,15 @@ class RegisterForm(forms.ModelForm):
         widgets = {
             'username': forms.TextInput(attrs={
                 'placeholder': 'Username',
-                'class': 'form-input w-full px-4 py-2 rounded-xl'
+                'class': 'form-input  text-black w-full px-4 py-2 rounded-xl'
             }),
             'email': forms.EmailInput(attrs={
                 'placeholder': 'E-mail Address',
-                'class': 'form-input w-full px-4 py-2 rounded-xl'
+                'class': 'form-input text-black w-full px-4 py-2 rounded-xl'
             }),
             'password': forms.PasswordInput(attrs={
                 'placeholder': 'Password',
-                'class': 'form-input w-full px-4 py-2 rounded-xl'
+                'class': 'form-input text-black  w-full px-4 py-2 rounded-xl'
             }),
         }
 
@@ -65,6 +65,6 @@ class VerifyOtpForm(forms.Form):
         max_length=6,
         widget=forms.TextInput(attrs={
             'placeholder': 'Enter OTP',
-            'class': 'form-input w-full px-4 py-2 rounded-xl'
+            'class': 'form-input text-black  w-full px-4 py-2 rounded-xl'
         })
     )

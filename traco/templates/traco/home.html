@@ -42,8 +42,24 @@
           <div class="text-slate-300">Realtime Users</div>
         </div>
       </div>
+ 
+      <!-- Circles + Text -->
+      <div class="flex items-center gap-6 mt-8">
+        <div class="flex -space-x-4">
+          <!-- First circle: black bg + neon border -->
+          <div class="w-16 h-16 rounded-full border-2 border-[#D4FF00]/80 bg-black"></div>
+ 
+          <!-- Second circle: arrow image -->
+          <div class="w-16 h-16 rounded-full border-2 border-[#D4FF00]/80 bg-[#D4FF00] flex items-center justify-center">
+            <img src="{% static 'images/right-up.png' %}" alt="arrow" class="w-6 h-6">
+          </div>
+        </div>
+ 
+        <p class="text-white text-lg md:text-xl font-semibold text-center md:text-left">
+          Your Trading Journey Started Here....
+        </p>
+      </div>
     </div>
-
     <!-- RIGHT IMAGE + vertical bars -->
     <div class="md:col-span-5 relative z-20">
       <!-- vertical rounded bars behind person -->
